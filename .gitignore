@@ -1,3 +1,4 @@
 node_modules
 .env
-mcp-servers/
+.next/
+next-env.d.ts
