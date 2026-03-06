@@ -1,0 +1,27 @@
+{
+  "mcpServers": {
+    "fetch": {
+      "command": "node",
+      "args": ["mcp-servers/src/fetch/index.js"]
+    },
+    "brave-search": {
+      "command": "node",
+      "args": ["mcp-servers/src/brave-search/index.js"]
+    },
+    "puppeteer": {
+      "command": "node",
+      "args": ["mcp-servers/src/puppeteer/index.js"]
+    },
+    "filesystem": {
+      "command": "node",
+      "args": [
+        "mcp-servers/src/filesystem/index.js",
+        "/Users/shash/Desktop/Code/Projects/CW/ai"
+      ]
+    },
+    "git": {
+      "command": "node",
+      "args": ["mcp-servers/src/git/index.js"]
+    }
+  }
+}
