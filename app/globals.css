@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+:root {
+    --background: #020617;
+    /* Deep Slate Blue */
+    --foreground: #f8fafc;
+    /* Slate White */
+    --card: rgba(15, 23, 42, 0.8);
+    /* Slate Glass */
+    --primary: #06b6d4;
+    /* Vibrant Cyan */
+    --primary-foreground: #ffffff;
+    --secondary: #3b82f6;
+    /* Azure Blue */
+    --border: rgba(255, 255, 255, 0.08);
+    /* Subtle border */
+    --glass-shine: rgba(255, 255, 255, 0.03);
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    /* Sophisticated Midnight Gradient */
+    background: linear-gradient(135deg, #020617 0%, #0f172a 40%, #1e1b4b 100%);
+    color: var(--foreground);
+    font-family: 'Inter', sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Subtle background animation for a "premium" feel */
+body::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(6, 182, 212, 0.05) 0%, transparent 60%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    margin: 2rem auto;
+    width: calc(100% - 2rem);
+    padding: 2rem;
+    background: var(--card);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 1.5rem;
+    border: 1px solid var(--border);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    text-align: center;
+    /* Silver to White Gradient */
+    background: linear-gradient(to bottom, #ffffff 0%, #cbd5e1 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 4px rgba(0, 255, 255, 0.2));
+}
+
+.messages-container {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 1.5rem;
+    padding-right: 0.5rem;
+}
+
+.messages-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.messages-container::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 3px;
+}
+
+.message-wrapper {
+    margin-bottom: 1.25rem;
+    display: flex;
+}
+
+.message-wrapper.user {
+    justify-content: flex-end;
+}
+
+.message {
+    max-width: 80%;
+    padding: 0.875rem 1.25rem;
+    border-radius: 1.25rem;
+    line-height: 1.5;
+    font-size: 0.95rem;
+    position: relative;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+}
+
+.message.user {
+    background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%);
+    color: white;
+    border-bottom-right-radius: 0.25rem;
+}
+
+.message.ai {
+    background: rgba(30, 41, 59, 0.5);
+    color: #f1f5f9;
+    border: 1px solid var(--border);
+    border-bottom-left-radius: 0.25rem;
+}
+
+.message-role {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.7;
+}
+
+.input-form {
+    display: flex;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background: rgba(2, 6, 23, 0.4);
+    border-radius: 1rem;
+    border: 1px solid var(--border);
+}
+
+.chat-input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    border: 1px solid var(--border);
+    background: rgba(15, 23, 42, 0.6);
+    color: #fff;
+    outline: none;
+    transition: all 0.2s;
+    font-size: 0.95rem;
+}
+
+.chat-input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(6, 182, 212, 0.15);
+}
+
+.send-button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.send-button:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.1);
+    box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3);
+}
+
+.send-button:active {
+    transform: scale(0.98);
+}
